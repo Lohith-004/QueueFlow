@@ -21,12 +21,11 @@ describe('MongoDB Lifecycle & Retry Policy (db.ts)', () => {
 
   describe('sanitizeMongoUri', () => {
     it('should mask passwords in connection strings containing credentials', () => {
-      const uriWithAuth =
-        'mongodb://appUser:superSecretPassword123@cluster0.mongodb.net:27017/queueflow';
+      const uriWithAuth = 'mongodb://mockUser:mockPassword123@localhost:27017/queueflow';
       const sanitized = sanitizeMongoUri(uriWithAuth);
 
-      expect(sanitized).not.toContain('superSecretPassword123');
-      expect(sanitized).toContain('appUser:***@cluster0.mongodb.net:27017/queueflow');
+      expect(sanitized).not.toContain('mockPassword123');
+      expect(sanitized).toContain('mockUser:***@localhost:27017/queueflow');
     });
 
     it('should return connection strings without passwords unmodified', () => {
