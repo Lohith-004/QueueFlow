@@ -15,6 +15,7 @@ export function createApp(
 ): Express {
   const env = envConfig ?? getEnv();
   const app = express();
+  app.locals.env = env;
 
   // 1. Helmet security headers
   app.use(helmet());
