@@ -1,0 +1,48 @@
+{
+  "name": "queueflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Intelligent Appointment & Real-Time Queue Management System",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "build": "npm run build --workspaces --if-present",
+    "build:shared": "npm run build --workspace=shared",
+    "build:server": "npm run build --workspace=server",
+    "build:client": "npm run build --workspace=client",
+    "test": "npm run test --workspaces --if-present",
+    "test:shared": "npm run test --workspace=shared",
+    "test:server": "npm run test --workspace=server",
+    "test:client": "npm run test --workspace=client",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "seed:admin": "npm run seed:admin --workspace=server",
+    "seed:services": "npm run seed:services --workspace=server"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.13.0"
+  },
+  "keywords": [
+    "queue-management",
+    "appointment-booking",
+    "socket-io",
+    "mongodb",
+    "react",
+    "express"
+  ],
+  "author": "",
+  "license": "UNLICENSED"
+}

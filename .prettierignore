@@ -1,0 +1,9 @@
+node_modules/
+dist/
+build/
+coverage/
+package-lock.json
+.git/
+test-results/
+playwright-report/
+*.md
